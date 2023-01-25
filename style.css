@@ -1,10 +1,31 @@
 *{
     padding: 0;
-    margin: 0;
+    margin: 10;
+}
+
+#scorebox{
+    width: 150px;
+    height: 40px;
+    background-color: white;
+    margin-bottom: 10px;
+    margin-left: 1100px;
+    border-style: solid;
+    border-color: black;
+    border-width: thin;
+    text-align: center;
+    
+}
+#score{
+    position: absolute;
+    left:50%;
+    top: 50%;
+    width: 150px;
+    height: 40px;
+    content:"Score:0";
 }
 #game{
-    width: 1500px;
-    height: 750px;
+    width: 1000px;
+    height: 650px;
     border: 1px solid black;
     margin: auto;
     overflow: hidden;
@@ -14,10 +35,12 @@
     height: 20px;
     background-color: red;
     position: relative;
+    top: 200px;
     left: 400px;
-    border-radius: 50%;
+    border-radius: 30%;
     /* animation: enemy 2s infinite linear; */
 }
+
 @keyframes enemy{
     0%{left:400px}
     100%{left:-50px}
@@ -28,6 +51,20 @@
     background-color: blue;
     position: relative;
     left: 500px;
-    top: 100px;
-    border-radius: 25%;
+    top: 400px;
+    border-radius: 30%;
+}
+
+#coin{
+    width: 10px;
+    height: 10px;
+    background-color: gold;
+    position: relative;
+    left: 105px;
+    top: 245px;
+    border-style: solid;
+    border-radius: 50%;
+    border-color: black;
+    border-width: thin;
+    
 }

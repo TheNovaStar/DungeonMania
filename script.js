@@ -2,7 +2,7 @@
 Author: Tera "NovaStar" Ward
 Version 0.1
 */
-
+var score = 0;
 //Event Listener for Keypresses
 document.addEventListener("keydown", event => {
   if(event.key==="ArrowUp"){moveUp();}
@@ -10,6 +10,13 @@ document.addEventListener("keydown", event => {
   if(event.key==="ArrowRight"){moveRight();}
   if(event.key==="ArrowDown"){moveDown();}
 });
+
+//Reinitialize Game
+function gameOver(){
+    character.style.top = "400px";
+    character.style.left = "500px";
+    score = 0;
+}
 
 //Movement Functions
 var character = document.getElementById("character");
@@ -34,6 +41,18 @@ function moveDown(){
     character.style.top = top + "px";
 }
 
+//Collision Detection
+setInterval(function(){
+    var characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
+    var characterLeft = parseInt(window.getComputedStyle(character).getPropertyValue("left"));
+    var enemyTop = parseInt(window.getComputedStyle(enemy).getPropertyValue("top"))-20;
+    var enemyLeft = parseInt(window.getComputedStyle(enemy).getPropertyValue("left"));
+
+    if((characterTop === enemyTop && characterLeft === enemyLeft)){
+        alert("Game over.");
+        gameOver()
+    }
+},10);
 
 /*
 setInterval(function(){
